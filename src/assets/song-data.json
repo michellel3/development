@@ -1,0 +1,73 @@
+[
+    {
+      "name": "You're On Your Own, Kid",
+      "genre": "Pop",
+      "artist": "Taylor Swift",
+      "length": 194,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "Karma",
+      "genre": "Pop",
+      "artist": "Taylor Swift",
+      "length": 204,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "Mastermind",
+      "genre": "Pop",
+      "artist": "Taylor Swift",
+      "length": 191,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "Getaway Car",
+      "genre": "Pop",
+      "artist": "Taylor Swift",
+      "length": 233,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "...Ready For It?",
+      "genre": "Pop",
+      "artist": "Taylor Swift",
+      "length": 208,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "my boy",
+      "genre": "Pop",
+      "artist": "Billie Eilish",
+      "length": 170,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "watch",
+      "genre": "Pop",
+      "artist": "Billie Eilish",
+      "length": 187,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "A Moment Apart",
+      "genre": "Electronic",
+      "artist": "Odesza",
+      "length": 234,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "Bloom",
+      "genre": "Electronic",
+      "artist": "Odesza",
+      "length": 195,
+      "cover": "images/midnight.jpg"
+    },
+    {
+      "name": "Boy",
+      "genre": "Electronic",
+      "artist": "Odesza",
+      "length": 183,
+      "cover": "images/midnight.jpg"
+    }
+  ]
+  

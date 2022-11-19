@@ -1,0 +1,13 @@
+.Song {
+    border: 2px solid rgb(76, 76, 76);
+    border-radius: 10px;
+    margin: 50px;
+    width: 300px;
+    height: 400px;
+    position: relative;
+}
+
+.Song img {
+    width: 300px;
+    border-radius: 10px;
+}
