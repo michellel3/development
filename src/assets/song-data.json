@@ -25,49 +25,63 @@
       "genre": "Pop",
       "artist": "Taylor Swift",
       "length": 233,
-      "cover": "images/midnight.jpg"
+      "cover": "images/reputation.jpg"
     },
     {
       "name": "...Ready For It?",
       "genre": "Pop",
       "artist": "Taylor Swift",
       "length": 208,
-      "cover": "images/midnight.jpg"
+      "cover": "images/reputation.jpg"
     },
     {
       "name": "my boy",
       "genre": "Pop",
       "artist": "Billie Eilish",
       "length": 170,
-      "cover": "images/midnight.jpg"
+      "cover": "images/dont-smile-at-me.jpg"
     },
     {
       "name": "watch",
       "genre": "Pop",
       "artist": "Billie Eilish",
-      "length": 187,
-      "cover": "images/midnight.jpg"
+      "length": 177,
+      "cover": "images/dont-smile-at-me.jpg"
     },
     {
       "name": "A Moment Apart",
       "genre": "Electronic",
-      "artist": "Odesza",
+      "artist": "ODESZA",
       "length": 234,
-      "cover": "images/midnight.jpg"
+      "cover": "images/a-moment-apart.jpg"
     },
     {
       "name": "Bloom",
       "genre": "Electronic",
-      "artist": "Odesza",
+      "artist": "ODESZA",
       "length": 195,
-      "cover": "images/midnight.jpg"
+      "cover": "images/in-return.jpg"
     },
     {
-      "name": "Boy",
+      "name": "Meridian",
       "genre": "Electronic",
-      "artist": "Odesza",
-      "length": 183,
-      "cover": "images/midnight.jpg"
+      "artist": "ODESZA",
+      "length": 235,
+      "cover": "images/a-moment-apart.jpg"
+    },
+    {
+      "name": "Epitaph",
+      "genre": "Indie",
+      "artist": "Hippo Campus",
+      "length": 255,
+      "cover": "images/landmark.jpg"
+    },
+    {
+      "name": "baseball",
+      "genre": "Indie",
+      "artist": "Hippo Campus",
+      "length": 198,
+      "cover": "images/warm-glow.jpg"
     }
   ]
   
