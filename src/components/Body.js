@@ -13,7 +13,10 @@ export default function Body() {
     const [artist, updateArtist] = useState([]);
     // keep track of filtered songs
     const [display, updateDisplay] = useState(songData);
+    // keep track of sorting method
+    const [sort, updateSort] = useState("A-Z: Song Name");
 
+    // updates the state of liked songs
     const changeFav = (song) => {
         if (fav.includes(song.name)) {
             updateFav(fav.filter(s => s !== song.name))
@@ -22,6 +25,7 @@ export default function Body() {
         }
     }
 
+    // updates the state of filtered genres
     const changeGenre = (type) => {
         if (genre.includes(type)) {
             updateGenre(genre.filter(x => x !== type))
@@ -32,6 +36,7 @@ export default function Body() {
         }
     }
 
+    // updates the state of filtered artists
     const changeArtist = (type) => {
         if (artist.includes(type)) {
             updateArtist(artist.filter(x => x !== type))
@@ -42,9 +47,13 @@ export default function Body() {
         }
     }
 
+    // updates the state of the sorting method
+    const changeSort = (type) => {
+        updateSort(type)
+    }
+
+    // checking a new filter
     const addFilter = (addG, addA) => {
-
-
         let filtered = songData;
 
         if (addA !== null || artist.length !== 0) {
@@ -57,6 +66,7 @@ export default function Body() {
         updateDisplay(filtered)
     }
 
+    // unchecking an existing filter
     const removeFilter = (remG, remA) => {
         // removing the only filter that existed, equivalent to resetting
         if (artist.length + genre.length === 1) {
@@ -78,10 +88,22 @@ export default function Body() {
         }
     }
 
+    const sortDisplay = (songs) => {
+        if (display === "A-Z: Song Name") {
+
+        } else if (display === "Z-A: Song Name") {
+
+        } else if (display === "Duration: Low to High") {
+
+        } else {
+
+        }
+    }
+
     return (
     <div className="Body">
         <div className='options'>
-            <Options genre={genre} changeGenre={changeGenre} artist={artist} changeArtist={changeArtist}/>
+            <Options genre={genre} changeGenre={changeGenre} artist={artist} changeArtist={changeArtist} sort={sort} changeSort={changeSort}/>
         </div>
         
         <div className='list'>
