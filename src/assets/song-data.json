@@ -56,18 +56,18 @@
       "cover": "images/a-moment-apart.jpg"
     },
     {
-      "name": "Bloom",
-      "genre": "Electronic",
-      "artist": "ODESZA",
-      "length": 195,
-      "cover": "images/in-return.jpg"
-    },
-    {
       "name": "Meridian",
       "genre": "Electronic",
       "artist": "ODESZA",
       "length": 235,
       "cover": "images/a-moment-apart.jpg"
+    },
+    {
+      "name": "Bloom",
+      "genre": "Electronic",
+      "artist": "ODESZA",
+      "length": 195,
+      "cover": "images/in-return.jpg"
     },
     {
       "name": "Epitaph",

@@ -4,9 +4,22 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 export default function Filter(props) {
 
+    const curr = props.curr;
+    let icon;
+    if (props.type.includes(curr)) {
+        icon = <CheckBoxIcon onClick={() => {props.change(curr)}} />
+    } else {
+        icon = <CheckBoxOutlineBlankIcon onClick={() => {props.change(curr)}} />
+    }
+
     return  (
         <div className="Filter">
-            
+            <div className="checkbox">
+                {icon}
+            </div>
+            <div className="type">
+                {curr}
+            </div>
         </div>
     )
 }
