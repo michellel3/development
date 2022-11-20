@@ -49,6 +49,7 @@ export default function Body() {
 
     // updates the state of the sorting method
     const changeSort = (type) => {
+        sortDisplay(display, type)
         updateSort(type)
     }
 
@@ -63,14 +64,14 @@ export default function Body() {
         if (addG !== null || genre.length !== 0) {
             filtered = filtered.filter(x => genre.includes(x.genre) || x.genre === addG)
         }
-        updateDisplay(filtered)
+        sortDisplay(filtered, sort)
     }
 
     // unchecking an existing filter
     const removeFilter = (remG, remA) => {
         // removing the only filter that existed, equivalent to resetting
         if (artist.length + genre.length === 1) {
-            updateDisplay(songData)
+            sortDisplay(songData, sort)
         } else {
             let filtered = display;
             if (remA !== null) {
@@ -84,19 +85,27 @@ export default function Body() {
             if (remG !== null) {
                 filtered = filtered.filter(x => genre.includes(x.genre) && x.genre !== remG)
             }
-            updateDisplay(filtered)
+            sortDisplay(filtered, sort)
         }
     }
 
-    const sortDisplay = (songs) => {
-        if (display === "A-Z: Song Name") {
-
-        } else if (display === "Z-A: Song Name") {
-
-        } else if (display === "Duration: Low to High") {
-
+    const sortDisplay = (songs, type) => {
+        if (type === "A-Z: Song Name") {
+            updateDisplay(songs.sort(function(a, b){
+                return a.name.localeCompare(b.name);
+            }))
+        } else if (type === "Z-A: Song Name") {
+            updateDisplay(songs.sort(function(a, b){
+                return b.name.localeCompare(a.name);
+            }))
+        } else if (type === "Duration: Low to High") {
+            updateDisplay(songs.sort(function(a, b){
+                return a.length - b.length;
+            }))
         } else {
-
+            updateDisplay(songs.sort(function(a, b){
+                return b.length - a.length;
+            }))
         }
     }
 
