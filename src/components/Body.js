@@ -15,13 +15,16 @@ export default function Body() {
     const [display, updateDisplay] = useState(songData);
     // keep track of sorting method
     const [sort, updateSort] = useState("A-Z: Song Name");
+    // keep track of whether viewing liked songs is selected
+    // true => view liked songs, false => browse songs
+    const [liked, updateLiked] = useState(false);
 
     // updates the state of liked songs
     const changeFav = (song) => {
-        if (fav.includes(song.name)) {
+        if (fav.includes(song)) {
             updateFav(fav.filter(s => s !== song.name))
         } else {
-            updateFav([...fav, song.name])
+            updateFav([...fav, song])
         }
     }
 
@@ -89,30 +92,37 @@ export default function Body() {
         }
     }
 
+    // sorts the songs that will be displayed
     const sortDisplay = (songs, type) => {
         if (type === "A-Z: Song Name") {
-            updateDisplay(songs.sort(function(a, b){
-                return a.name.localeCompare(b.name);
-            }))
+            updateDisplay(songs.sort((a, b) => a.name.localeCompare(b.name)))
         } else if (type === "Z-A: Song Name") {
-            updateDisplay(songs.sort(function(a, b){
-                return b.name.localeCompare(a.name);
-            }))
+            updateDisplay(songs.sort((a, b) => b.name.localeCompare(a.name)))
         } else if (type === "Duration: Low to High") {
-            updateDisplay(songs.sort(function(a, b){
-                return a.length - b.length;
-            }))
+            updateDisplay(songs.sort((a, b) => a.length - b.length))
         } else {
-            updateDisplay(songs.sort(function(a, b){
-                return b.length - a.length;
-            }))
+            updateDisplay(songs.sort((a, b) => b.length - a.length))
         }
+    }
+    
+    // updates the state of viewing favorites
+    const changeLiked = () => {
+        // selected "browse songs"
+        if (liked) {
+            addFilter(null, null)
+        // selected "view liked"
+        } else {
+            sortDisplay(fav, sort)
+        }
+        updateLiked(!liked)
     }
 
     return (
     <div className="Body">
         <div className='options'>
-            <Options genre={genre} changeGenre={changeGenre} artist={artist} changeArtist={changeArtist} sort={sort} changeSort={changeSort}/>
+            <Options genre={genre} changeGenre={changeGenre} artist={artist} 
+            changeArtist={changeArtist} sort={sort} changeSort={changeSort} 
+            liked={liked} changeLiked={changeLiked} />
         </div>
         
         <div className='list'>

@@ -1,15 +1,22 @@
 import "./Options.css";
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import Filter from "./Filter";
 import Sort from "./Sort";
 
 export default function Options(props) {
-    const genres = ["Pop", "Electronic", "Indie"]
-    const artists = ["Taylor Swift", "Billie Eilish", "ODESZA", "Hippo Campus"]
+    const genres = ["Electronic", "Indie", "Pop"]
+    const artists = ["Billie Eilish", "Hippo Campus", "ODESZA", "Taylor Swift"]
     const sorting = ["A-Z: Song Name", "Z-A: Song Name", "Duration: Low to High", "Duration: High to Low"]
+
+    let buttonText;
+    // user is viewing favorites
+    if (props.liked) {
+        buttonText = "Browse Songs"
+    // user is viewing liked songs
+    } else {
+        buttonText = "View Liked"
+    }
 
     return  (
         <div className="Options">
@@ -37,6 +44,9 @@ export default function Options(props) {
             {sorting.map((currSort, index) => ( 
             <Sort currSort={currSort} sort={props.sort} changeSort={props.changeSort}/>
             ))}
+            <button className="button" onClick={() => {props.changeLiked()}}>
+                {buttonText}
+            </button>
         </div>
     )
 }

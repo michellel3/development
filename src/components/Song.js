@@ -6,7 +6,7 @@ export default function Song(props) {
 
     const song = props.song;
     let icon;
-    if (props.fav.includes(song.name)) {
+    if (props.fav.includes(song)) {
         icon = <FavoriteIcon className="icon" onClick={() => {props.changeFav(song)}} />
     } else {
         icon = <FavoriteBorderIcon className="icon" onClick={() => {props.changeFav(song)}} />
