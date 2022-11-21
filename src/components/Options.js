@@ -1,8 +1,7 @@
 import "./Options.css";
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import Filter from "./Filter";
 import Sort from "./Sort";
+import songData from "../assets/song-data.json";
 
 export default function Options(props) {
     const genres = ["Electronic", "Indie", "Pop"]
@@ -46,6 +45,14 @@ export default function Options(props) {
             ))}
             <button className="button" onClick={() => {props.changeLiked()}}>
                 {buttonText}
+            </button>
+
+            <button className="button" onClick={() => {
+                props.sortDisplay(songData, "A-Z: Song Name")
+                props.updateGenre([])
+                props.updateArtist([])
+                props.updateSort("A-Z: Song Name")}}>
+                Reset Filters/Sort
             </button>
         </div>
     )
