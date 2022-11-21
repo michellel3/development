@@ -14,7 +14,21 @@ export default function Options(props) {
         buttonText = "Browse Songs"
     // user is viewing liked songs
     } else {
-        buttonText = "View Liked"
+        buttonText = "View Favorites"
+    }
+
+    // total duration of liked songs (seconds)
+    let time = 0
+    for (let i = 0; i < props.fav.length; i++) {  
+        time += props.fav[i].length;  
+    }
+
+    // reformating total seconds to the form min:sec
+    let total = 0;
+    if ((time % 60) > 9) {
+        total = Math.floor(time/60) + ":" + (time % 60)
+    } else {
+        total = Math.floor(time/60) + ":0" + (time % 60)
     }
 
     return  (
@@ -43,11 +57,15 @@ export default function Options(props) {
             {sorting.map((currSort, index) => ( 
             <Sort currSort={currSort} sort={props.sort} changeSort={props.changeSort}/>
             ))}
-            <button className="button" onClick={() => {props.changeLiked()}}>
-                {buttonText}
-            </button>
 
-            <button className="button" onClick={() => {
+            <div>
+                Favorites Duration: {total}
+                <button className="liked" onClick={() => {props.changeLiked()}}>
+                    {buttonText}
+                </button>
+            </div>
+
+            <button className="reset" onClick={() => {
                 props.sortDisplay(songData, "A-Z: Song Name")
                 props.updateGenre([])
                 props.updateArtist([])

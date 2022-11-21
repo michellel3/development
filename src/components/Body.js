@@ -123,7 +123,8 @@ export default function Body() {
             <Options genre={genre} changeGenre={changeGenre} artist={artist} 
             changeArtist={changeArtist} sort={sort} changeSort={changeSort} 
             liked={liked} changeLiked={changeLiked} sortDisplay={sortDisplay} 
-            updateGenre={updateGenre} updateArtist={updateArtist} updateSort={updateSort}/>
+            updateGenre={updateGenre} updateArtist={updateArtist} updateSort={updateSort}
+            fav={fav}/>
         </div>
         
         <div className='list'>
